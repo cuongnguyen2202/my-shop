@@ -1,0 +1,100 @@
+.signup {
+  padding: 40px 20px;
+  background-color: #eeeaea;
+  border-radius: 30px;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  &-heading {
+    text-align: center;
+    font-weight: 600;
+    background: linear-gradient(to right, #81c91d 0%, #59900c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 35px;
+    margin-bottom: 35px;
+  }
+  &-form {
+    width: 50rem;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+}
+.form {
+  &-group {
+    margin-bottom: 25px;
+    position: relative;
+  }
+  &-icon {
+    position: absolute;
+    top: 50%;
+    right: 1.5rem;
+    transform: translateY(-50%);
+    color: #ccc;
+    cursor: pointer;
+    font-size: 1.5em;
+  }
+  &-input {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+    outline: none;
+    font-family: "Poppins", sans-serif;
+    background-color: #f2f3f5;
+    color: #363a40;
+    font-size: 16px;
+    transition: border-color 0.2s ease-in;
+    &:focus {
+      border-color: #81c91d;
+    }
+  }
+  &-input::-webkit-input-placeholder {
+    color: #b4bdc1;
+  }
+  &-submit {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+    margin-top: 45px;
+    width: 33%;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    border: 0;
+    border-radius: 15px;
+    background-color: #81c91d;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 20px -5px rgba(129, 201, 29, 0.9);
+    outline: none;
+    transition: background-color 0.25s linear;
+    &:hover {
+      background-color: #59900c;
+    }
+  }
+  &-errors {
+    color: red;
+    font-size: 1.4rem;
+  }
+}
+.custom-loading {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-30% -50%);
+}
+
+@media screen and (max-width: 767px) {
+  .signup {
+    padding: 30px 20px;
+  }
+}

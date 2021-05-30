@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Router, Switch } from "react-router-dom";
+import "./App.scss";
+import Layout from "./components/LayOut";
+import PrivateAuth from "./components/PrivateAuth";
+import SignIn from "./components/SignIn";
+import SignUp from "./components/SignUp";
+import { history } from "./helps/history";
 
 function App() {
+  // useEffect(() => {
+  //   const fetchProducts = async () => {
+  //     const productsList = await productsAPI.getAll();
+  //     console.log(productsList);
+  //   };
+  //   return fetchProducts();
+  // }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router history={history}>
+      <div className="App">
+        <div className="wrapper">
+          <Switch>
+            <PrivateAuth exact path="/" component={Layout} />
+            <Route path="/signup" component={SignUp} />
+            <Route path="/signin" component={SignIn} />
+          </Switch>
+        </div>
+      </div>
+    </Router>
   );
 }
 

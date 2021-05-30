@@ -1,0 +1,65 @@
+.form-next {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #ff3399;
+}
+.signup-or {
+  color: #363a40;
+  display: block;
+  text-align: center;
+  position: relative;
+  margin-bottom: 55px;
+}
+.signup-or-text {
+  display: inline-block;
+  padding: 5px 20px;
+  background-color: white;
+  position: relative;
+  font-size: 14px;
+}
+.signup-or:before {
+  content: "";
+  height: 1px;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background-color: #999;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.signin-heading {
+  text-align: center;
+  font-weight: 600;
+  background: linear-gradient(to right, #81c91d 0%, #59900c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 35px;
+  margin: 0;
+}
+.custom-btn-facebook {
+  position: relative;
+  left: 50%;
+  color: red;
+  transform: translateX(-50%);
+  font-weight: bold;
+  margin-top: 2rem;
+  width: 50%;
+  padding: 2rem;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  border: 0;
+  border-radius: 15px;
+  background-color: #1d53c9;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 10px 20px -5px rgba(29, 83, 201, 0.9);
+  outline: none;
+  transition: background-color 0.25s linear;
+  &:hover {
+    background-color: #446cb6;
+  }
+}
