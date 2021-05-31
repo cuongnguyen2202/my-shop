@@ -8,7 +8,7 @@ function PrivateAuth({ component: Component, ...rest }) {
     <Route
       {...rest}
       render={(props) =>
-        localStorage.getItem("users") ? (
+        localStorage.getItem("user") ? (
           <Component {...props} />
         ) : (
           <Redirect

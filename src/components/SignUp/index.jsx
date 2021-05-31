@@ -1,15 +1,14 @@
-import React, { useEffect } from "react";
-import SignUpField from "./SignUpField";
-import { formSignUpData } from "../../common/Form/StaticForm";
-import "./style.scss";
-import { useForm } from "react-hook-form";
-import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { notification, Space, Spin } from "antd";
+import React, { useEffect } from "react";
+import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import * as yup from "yup";
+import { formSignUpData } from "../../common/Form/StaticForm";
 import { useRegister } from "../../redux/hooks/Register";
-import { Spin, Space, notification } from "antd";
 import { useUsers } from "../../redux/hooks/Users";
-import { history } from "../../helps/history";
+import SignUpField from "./SignUpField";
+import "./style.scss";
 
 const openNotificationWithIcon = (type, message) => {
   notification[type]({

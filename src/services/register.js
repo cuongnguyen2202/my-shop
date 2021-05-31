@@ -1,5 +1,4 @@
 import axiosClient from "../modules/core/axiosClient";
-import usersApi from "./usersAPI";
 const apiURL = "https://60ac62539e2d6b001745711d.mockapi.io/myshop/users";
 
 const registerAPI = {

@@ -50,7 +50,7 @@ const SignIn = () => {
       if (checkEmail.length === 1) {
         if (checkEmail[0].password === password) {
           setLoading(false);
-          localStorage.setItem("users", JSON.stringify(data));
+          localStorage.setItem("user", JSON.stringify(data));
           openNotificationWithIcon("success", "Welcome to my shop");
           history.push("/");
         } else {
