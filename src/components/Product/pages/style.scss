@@ -1,0 +1,92 @@
+.product {
+  &__layout {
+    margin-top: 2rem;
+  }
+  &__card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    height: 100%;
+    cursor: default;
+  }
+  &__image {
+    width: 50%;
+    cursor: pointer;
+    height: 100%;
+  }
+  &__text {
+    .ant-card-meta-description {
+      display: block;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  &__list {
+    margin-top: 5.5rem;
+  }
+  &__sort {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    width: 100%;
+    position: absolute;
+    right: 0.8rem;
+  }
+  &__price {
+    font-weight: bold;
+  }
+  &__right {
+    position: relative;
+  }
+  &__modal {
+    cursor: default;
+    &-img {
+      @extend .product__image;
+      cursor: default;
+    }
+  }
+  &__right {
+    &-text {
+      font-weight: bold;
+      text-align: center;
+      margin-top: 2rem;
+    }
+  }
+}
+.filter {
+  &__btn {
+    width: 100%;
+    border: 0;
+  }
+  &__group {
+    width: 100%;
+    .ant-space-vertical {
+      width: 100%;
+    }
+    .ant-space-item {
+      width: 100%;
+    }
+  }
+}
+
+.filter__group {
+  width: 100%;
+  .ant-space-vertical {
+    width: 100%;
+  }
+  .ant-space-item {
+    width: 100%;
+  }
+}
+
+.ant-card-cover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50%;
+}
