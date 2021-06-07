@@ -1,0 +1,41 @@
+$width-custom: calc(100% / 6);
+.cart {
+  &__wrap {
+    background-color: #fff;
+  }
+  &__list {
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
+  }
+
+  &__item {
+    width: $width-custom;
+    text-align: center;
+    &.title {
+      font-weight: bold;
+      margin-bottom: 0;
+    }
+    &.cashout {
+      padding: 0;
+      margin: 0;
+    }
+  }
+  &__img {
+    width: 50%;
+    height: 50%;
+    margin: 0 auto;
+  }
+  &__quantity {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button {
+      padding: 0 1rem;
+    }
+    p {
+      margin: 0 1rem;
+    }
+  }
+}

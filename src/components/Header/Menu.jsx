@@ -3,9 +3,10 @@ import { ShoppingCartOutlined } from "@ant-design/icons";
 import { Badge } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Route, Switch } from "react-router-dom";
 import { cartItemCountSelector } from "../../redux/selectors/Cart";
 import { useSelector } from "react-redux";
+import Cart from "../Cart";
 
 const Menu = () => {
   const cartItemCount = useSelector(cartItemCountSelector);
@@ -28,7 +29,9 @@ const Menu = () => {
           </div>
           <div className="menu__cart">
             <Badge count={cartItemCount} overflowCount={10}>
-              <ShoppingCartOutlined className="menu__cart-icon" />
+              <Link to="/checkout">
+                <ShoppingCartOutlined className="menu__cart-icon" />
+              </Link>
             </Badge>
           </div>
         </div>

@@ -15,6 +15,7 @@ const setQuantity = (data) => ({
   type: cartAction.SET_QUANTITY,
   payload: { data },
 });
+
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   addToCart,

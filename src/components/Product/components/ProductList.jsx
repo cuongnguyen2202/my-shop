@@ -17,6 +17,7 @@ const ProductList = (props) => {
               price={item.price}
               title={item.title}
             />
+
           );
         })}
     </Row>

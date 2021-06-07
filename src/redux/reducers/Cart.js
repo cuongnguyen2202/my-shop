@@ -5,27 +5,29 @@ const initialCart = {
   item: [],
 };
 
-const register = (state = initialCart, action) =>
+const cart = (state = initialCart, action) =>
   produce(state, (draft) => {
     const { type, payload } = action;
     switch (type) {
       case cartAction.ADD_TO_CART:
         const newItem = payload;
         const indexCart = draft.item.findIndex(
-          (item) => item.id === newItem.id
+          (item) => item.data.id === newItem.data.id
         );
-        if (indexCart > 0) {
-          draft.item[indexCart].quantity += newItem.quantity;
+        if (indexCart >= 0) {
+          draft.item[indexCart].data.quantity += 1;
         } else {
           draft.item.push(newItem);
         }
         break;
       case cartAction.SET_QUANTITY:
-        const { id, quantity } = payload;
+        const { id, newQuantity } = payload.data;
+        console.log(id);
         //check id
-        const index = draft.item.findIndex((item) => item.id === id);
-        if (index > 0) {
-          draft.item[index].quantity = quantity;
+        const index = draft.item.findIndex((item) => item.data.id === id);
+        console.log(index);
+        if (index >= 0) {
+          draft.item[index].data.quantity = newQuantity;
         }
         break;
       case cartAction.REMOVE_FROM_CART:
@@ -37,4 +39,4 @@ const register = (state = initialCart, action) =>
         return;
     }
   });
-export default register;
+export default cart;

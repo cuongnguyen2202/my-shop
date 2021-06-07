@@ -20,8 +20,10 @@ const ProductItems = (props) => {
     setIsModalVisible(false);
   };
   const handleAddToCard = (data) => {
-    setQuantity((quantity = quantity + 1));
+
+    setQuantity(quantity = quantity+1);
     action.addToCart({ ...data, quantity });
+    console.log(data);
   };
   return (
     <>
