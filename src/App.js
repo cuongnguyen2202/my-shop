@@ -1,9 +1,6 @@
 import { Route, Router, Switch } from "react-router-dom";
 import "./App.scss";
-import Cart from "./components/Cart";
-import Header from "./components/Header";
 import Layout from "./components/LayOut";
-import ListPage from "./components/Product/pages/ListPage";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import { history } from "./helps/history";

@@ -1,12 +1,11 @@
-import { faSearch, faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 import { ShoppingCartOutlined } from "@ant-design/icons";
-import { Badge } from "antd";
+import { faSearch, faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Badge } from "antd";
 import React from "react";
-import { Link, Route, Switch } from "react-router-dom";
-import { cartItemCountSelector } from "../../redux/selectors/Cart";
 import { useSelector } from "react-redux";
-import Cart from "../Cart";
+import { Link } from "react-router-dom";
+import { cartItemCountSelector } from "../../redux/selectors/Cart";
 
 const Menu = () => {
   const cartItemCount = useSelector(cartItemCountSelector);

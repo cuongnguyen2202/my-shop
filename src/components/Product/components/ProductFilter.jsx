@@ -1,6 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
 import { Radio, Space } from "antd";
+import React from "react";
 
 const ProductFilter = (props) => {
   const { handleFilter, handleData } = props;

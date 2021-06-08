@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
 import { Button } from "antd";
+import React, { useEffect, useState } from "react";
 import { useCart } from "../../../redux/hooks/Cart";
 const CartItem = (props) => {
   const { id, title, image, price } = props;

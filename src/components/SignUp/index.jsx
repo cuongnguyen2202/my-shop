@@ -24,6 +24,7 @@ const SignUp = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     action.getUser();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   let userList = users.data;
   console.log(userList);

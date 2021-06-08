@@ -1,5 +1,5 @@
+import { Row } from "antd";
 import React from "react";
-import { Row, Skeleton } from "antd";
 import ProductItems from "./ProductItems";
 
 const ProductList = (props) => {

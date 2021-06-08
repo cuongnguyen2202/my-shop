@@ -7,11 +7,12 @@ import ProductSort from "../components/ProductSort";
 import "./style.scss";
 const ListPage = (props) => {
   const { Content, Sider } = Layout;
-  const { products, actions } = useProducts();
+  const { actions } = useProducts();
   const [data, setData] = useState();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     actions.getProduct();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   useEffect(() => {
     setData(JSON.parse(localStorage.getItem("listData")));

@@ -5,7 +5,7 @@ import { history } from "../../helps/history";
 
 const { Meta } = Card;
 const logout = () => {
-  localStorage.removeItem("user");
+  localStorage.removeItem("users");
   history.push("signin");
 };
 const menu = (
@@ -17,8 +17,8 @@ const menu = (
       avatar={
         <Avatar>
           {" "}
-          {JSON.parse(localStorage.getItem("user"))
-            ? JSON.parse(localStorage.getItem("user")).email[0].toUpperCase()
+          {JSON.parse(localStorage.getItem("users"))
+            ? JSON.parse(localStorage.getItem("users")).email[0].toUpperCase()
             : ""}
         </Avatar>
       }
@@ -34,7 +34,7 @@ const menu = (
   </Card>
 );
 const Heading = () => {
-  const loggedIn = JSON.parse(localStorage.getItem("user"));
+  const loggedIn = JSON.parse(localStorage.getItem("users"));
   console.log(loggedIn);
   // co email la dang nhap r chua co email thi chua dang nhap
   const isLoggedIn = loggedIn ? true : false;

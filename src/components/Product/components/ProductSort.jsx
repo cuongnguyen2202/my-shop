@@ -1,6 +1,5 @@
+import { Select } from "antd";
 import React from "react";
-import PropTypes from "prop-types";
-import { Radio, Select } from "antd";
 const { Option } = Select;
 
 const ProductSort = (props) => {

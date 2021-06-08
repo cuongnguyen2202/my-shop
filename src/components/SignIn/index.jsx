@@ -35,6 +35,7 @@ const SignIn = () => {
   const { users, action } = useUsers();
   useEffect(() => {
     action.getUser();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   let userList = users.data;
   // state loading cho login
@@ -50,7 +51,7 @@ const SignIn = () => {
       if (checkEmail.length === 1) {
         if (checkEmail[0].password === password) {
           setLoading(false);
-          localStorage.setItem("user", JSON.stringify(data));
+          localStorage.setItem("users", JSON.stringify(data));
           openNotificationWithIcon("success", "Welcome to my shop");
           history.push("/");
         } else {

@@ -1,14 +1,13 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import { Col, Card, Button, Modal } from "antd";
 import { CarOutlined } from "@ant-design/icons";
+import { Button, Card, Col, Modal } from "antd";
+import React, { useState } from "react";
 import { useCart } from "../../../redux/hooks/Cart";
 const { Meta } = Card;
 
 const ProductItems = (props) => {
-  const { id, title, image, description, price } = props;
+  const {title, image, description, price } = props;
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const { cart, action } = useCart();
+  const { action } = useCart();
   let [quantity, setQuantity] = useState(0);
   const showModal = () => {
     setIsModalVisible(true);

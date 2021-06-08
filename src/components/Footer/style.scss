@@ -1,0 +1,27 @@
+.footer {
+  background-color: #f8eded;
+  padding: 0;
+  padding-top: 2rem;
+  text-align: center;
+
+  &__title {
+    font-weight: bold;
+    font-size: 2rem;
+    color: #ff6600;
+  }
+  &__follow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__link {
+    padding: 0 1rem;
+  }
+  &__icon {
+    font-size: 3rem;
+  }
+  &__copyright {
+    margin-top: 2rem;
+    background-color: #fbd7d7de;
+  }
+}

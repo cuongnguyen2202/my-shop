@@ -1,9 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import CartItem from './CartItem';
-import {Divider} from 'antd'
+import { Divider } from 'antd';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { cartTotalSelector } from '../../../redux/selectors/Cart';
+import CartItem from './CartItem';
 
 const CartList = props => {
   const {data} = props
