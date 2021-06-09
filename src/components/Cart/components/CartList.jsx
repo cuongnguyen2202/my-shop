@@ -1,12 +1,43 @@
-import { Divider } from 'antd';
-import React from 'react';
+import { Button, Divider, Result, notification, Modal, Card } from 'antd';
+import React,{useState} from 'react';
 import { useSelector } from 'react-redux';
+import { history } from '../../../helps/history';
 import { cartTotalSelector } from '../../../redux/selectors/Cart';
 import CartItem from './CartItem';
-
+const openNotificationWithIcon = (type, message) => {
+  notification[type]({
+    message: message,
+    duration: 2,
+  });
+};
+const { Meta } = Card;
 const CartList = props => {
   const {data} = props
-  const totalPrice = useSelector(cartTotalSelector)
+  const totalPrice = useSelector(cartTotalSelector);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleOk = () => {
+    setIsModalVisible(false);
+    window.open('/','_self');
+  }
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+
+  const handleBuyNow = () =>{
+    history.push('/');
+  }
+  const handleCheckOut =() =>{
+    if(localStorage.getItem('users')===null){
+    openNotificationWithIcon("error", "You must Login First!!")
+    }else{
+     showModal();
+    }
+  }
   return (
 
  <>
@@ -35,14 +66,41 @@ const CartList = props => {
             </>
           );
         })}
+      {data.length === 0 && (
+          <Result
+          status="warning"
+          title="No item in your cart."
+          extra={
+            <Button onClick={handleBuyNow} type="primary" key="console">
+              Buy Now
+            </Button>
+          }
+        />
+      )}
     <ul className='cart__list'>
    <li className="cart__item cashout">Total</li>
    <li className="cart__item cashout"></li>
    <li className="cart__item cashout"></li>
    <li className="cart__item cashout"></li>
    <li className="cart__item cashout"></li>
-   <li className="cart__item cashout">{totalPrice}</li>
+   <li className="cart__item cashout">{totalPrice}$</li>
  </ul>
+ <Divider/>
+ {data.length > 0 && (
+   <Button type='primary' onClick={handleCheckOut} className='btn-checkout'>Checkout</Button>
+ )}
+   <Modal
+        visible={isModalVisible}
+        onCancel={handleCancel}
+        footer={[
+          <Button type="primary" danger key="ok" onClick={handleOk}>
+            OK
+          </Button>,
+        ]}
+      >
+       <p className="cashout">Your order is confirmed</p>
+      </Modal>
+
 
  </>
   )

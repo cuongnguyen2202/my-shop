@@ -26,6 +26,11 @@ const CartItem = (props) => {
   useEffect(() => {
     action.setQuantity({ ...data });
   });
+  const removeItem = () => {
+    action.removeFromCart(id);
+  }
+
+
 
   return (
     <ul className="cart__list">
@@ -50,10 +55,10 @@ const CartItem = (props) => {
       </li>
       <li className="cart__item">
         {" "}
-        <p className="cart__total">{total}</p>
+        <p className="cart__total">{total}$</p>
       </li>
       <li className="cart__item">
-        <Button type="primary" danger>
+        <Button type="primary" danger onClick={removeItem}>
           Remove
         </Button>
       </li>

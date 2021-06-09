@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Badge } from "antd";
 import React from "react";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { cartItemCountSelector } from "../../redux/selectors/Cart";
 
 const Menu = () => {
@@ -20,11 +20,17 @@ const Menu = () => {
               size="5x"
             />
           </Link>
-          <div className="menu__search">
-            <input type="text" />
-            <button>
-              <FontAwesomeIcon icon={faSearch} />
-            </button>
+          <div className="menu__router">
+            <NavLink to="/about" className='menu__item'        activeClassName='menu__active'>
+            About Us
+            </NavLink>
+            <NavLink to="/contact" className='menu__item'        activeClassName='menu__active'>
+            Contact
+            </NavLink>
+            <NavLink to="/help" className='menu__item'        activeClassName='menu__active'>
+           Help
+            </NavLink>
+
           </div>
           <div className="menu__cart">
             <Badge count={cartItemCount} overflowCount={10}>

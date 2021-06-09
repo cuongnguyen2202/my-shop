@@ -22,17 +22,15 @@ const cart = (state = initialCart, action) =>
         break;
       case cartAction.SET_QUANTITY:
         const { id, newQuantity } = payload.data;
-        console.log(id);
         //check id
         const index = draft.item.findIndex((item) => item.data.id === id);
-        console.log(index);
         if (index >= 0) {
           draft.item[index].data.quantity = newQuantity;
         }
         break;
       case cartAction.REMOVE_FROM_CART:
-        const idRemove = payload;
-        draft.item = draft.item.filter((item) => item.id !== idRemove);
+        const idRemove = payload.data;
+        draft.item = draft.item.filter((item) => item.data.id !== idRemove);
         break;
 
       default:

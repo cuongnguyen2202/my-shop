@@ -19,6 +19,11 @@
   }
   &__icon {
     font-size: 3rem;
+    color: #ff6600;
+    transition: color 0.25s linear;
+    &:hover {
+      color: #f89b5d;
+    }
   }
   &__copyright {
     margin-top: 2rem;

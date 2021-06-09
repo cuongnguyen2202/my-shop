@@ -23,8 +23,8 @@ const menu = (
         </Avatar>
       }
       description={
-        JSON.parse(localStorage.getItem("user"))
-          ? JSON.parse(localStorage.getItem("user")).email
+        JSON.parse(localStorage.getItem("users"))
+          ? JSON.parse(localStorage.getItem("users")).email
           : ""
       }
     />
