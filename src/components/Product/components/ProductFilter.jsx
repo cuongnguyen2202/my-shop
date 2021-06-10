@@ -3,6 +3,7 @@ import React from "react";
 
 const ProductFilter = (props) => {
   const { handleFilter, handleData } = props;
+  handleFilter("All");
   return (
     <Radio.Group className="filter__group" defaultValue="All">
       <Space direction="vertical">
