@@ -1,9 +1,12 @@
 import { Radio, Space } from "antd";
-import React from "react";
+import React, { useEffect } from "react";
 
 const ProductFilter = (props) => {
   const { handleFilter, handleData } = props;
-  handleFilter("All");
+  useEffect(() => {
+    handleFilter("All");
+  }, []);
+
   return (
     <Radio.Group className="filter__group" defaultValue="All">
       <Space direction="vertical">
