@@ -1,43 +1,41 @@
-import { Dropdown, Button, Avatar, Card } from "antd";
+import { Avatar, Button, Dropdown, Menu } from "antd";
 import React from "react";
 import { Link } from "react-router-dom";
 import { history } from "../../helps/history";
 
-const { Meta } = Card;
 const logout = () => {
   localStorage.removeItem("users");
   history.push("signin");
 };
-const menu = (
-  <Card
-    style={{ width: 300, height: 100, padding: 20 }}
-    className="header__info"
-  >
-    <Meta
-      avatar={
-        <Avatar>
-          {" "}
-          {JSON.parse(localStorage.getItem("users"))
-            ? JSON.parse(localStorage.getItem("users")).email[0].toUpperCase()
-            : ""}
-        </Avatar>
-      }
-      description={
-        JSON.parse(localStorage.getItem("users"))
-          ? JSON.parse(localStorage.getItem("users")).email
-          : ""
-      }
-    />
-    <Button type="primary" className="header__logout" onClick={logout}>
-      Logout
-    </Button>
-  </Card>
-);
 const Heading = () => {
   const loggedIn = JSON.parse(localStorage.getItem("users"));
-  console.log(loggedIn);
   // co email la dang nhap r chua co email thi chua dang nhap
   const isLoggedIn = loggedIn ? true : false;
+  const menu = (
+    <Menu className="heading__menu">
+      <Menu.Item key="0">
+        {loggedIn && (
+          <>
+            <Avatar className="avatar">
+              {loggedIn.email[0].toUpperCase()}
+            </Avatar>
+            <span className="heading__mail">{loggedIn.email}</span>
+          </>
+        )}
+      </Menu.Item>
+      <Menu.Divider />
+      <Menu.Item key="1" className="heading__menu-item">
+        <Button
+          type="primary"
+          danger
+          onClick={logout}
+          className="heading__logout"
+        >
+          Logout
+        </Button>
+      </Menu.Item>
+    </Menu>
+  );
   return (
     <header className="heading">
       <div className="container">

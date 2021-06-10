@@ -18,7 +18,7 @@ const FooterCustom = () => {
           <a href="https://www.facebook.com/" className='footer__link'><TwitterOutlined className='footer__icon'/></a>
           <a href="https://www.facebook.com/" className='footer__link'><InstagramOutlined className='footer__icon'/></a>
         </div>
-        <p class="footer__copyright">
+        <p className="footer__copyright">
                 © COPYRIGHT 2021 By Nguyen Cuong
             </p>
 

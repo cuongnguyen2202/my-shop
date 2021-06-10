@@ -17,7 +17,6 @@
     }
   }
   &__right {
-    display: flex;
     .heading__item:not(:first-child) {
       border-left: 1px solid #b3afaf;
     }
@@ -32,9 +31,21 @@
       }
     }
   }
+  &__menu {
+    width: 30rem;
+
+    &-item {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
   &__item {
     font-size: 1.1rem;
     font-family: var(--primary-font);
+    padding: 0 2rem;
+  }
+  &__mail {
+    display: inline-block;
     padding: 0 2rem;
   }
 }
@@ -122,8 +133,6 @@
   cursor: pointer;
 }
 
-.header__logout {
+.heading__logout {
   margin-top: 1.5rem;
-  position: absolute;
-  right: 2rem;
 }
