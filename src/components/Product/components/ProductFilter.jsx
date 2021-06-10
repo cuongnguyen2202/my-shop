@@ -5,6 +5,7 @@ const ProductFilter = (props) => {
   const { handleFilter, handleData } = props;
   useEffect(() => {
     handleFilter("All");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
