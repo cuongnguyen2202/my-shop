@@ -1,18 +1,19 @@
-import React, { useEffect } from "react";
 import { Route, Router, Switch } from "react-router-dom";
-
+import { useEffect } from "react";
 import "./App.scss";
 import Layout from "./components/LayOut";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import { history } from "./helps/history";
-import { useProducts } from "./redux/hooks/Products";
+import productsAPI from "./services/productAPI";
 
 function App() {
-  const { actions } = useProducts();
   useEffect(() => {
-    actions.getProduct();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const fetchProducts = async () => {
+      const productsList = await productsAPI.getAll();
+      localStorage.setItem("listData", JSON.stringify(productsList));
+    };
+    return fetchProducts();
   }, []);
   return (
     <Router history={history}>
