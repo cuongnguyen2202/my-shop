@@ -12,10 +12,11 @@ const ListPage = (props) => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     actions.getProduct();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   useEffect(() => {
-    setData(JSON.parse(localStorage.getItem("listData")));
+    // setData(JSON.parse(localStorage.getItem("listData")));
+    handleData();
   }, []);
   const handleData = () => {
     setData(JSON.parse(localStorage.getItem("listData")));
