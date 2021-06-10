@@ -5,7 +5,7 @@ import { productAction } from "../actions/Products";
 export function* Product(params) {
   try {
     const response = yield call(productsAPI.getAll);
-    // localStorage.setItem("listData", JSON.stringify(response));
+    localStorage.setItem("listData", JSON.stringify(response));
 
     yield put({
       type: productAction.GET_PRODUCT_SUCCESS,
