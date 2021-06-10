@@ -8,7 +8,9 @@ import "./style.scss";
 const ListPage = (props) => {
   const { Content, Sider } = Layout;
   const { actions } = useProducts();
-  const [data, setData] = useState();
+  const [data, setData] = useState(
+    JSON.parse(localStorage.getItem("listData"))
+  );
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     actions.getProduct();
